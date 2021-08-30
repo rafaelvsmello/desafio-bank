@@ -24,11 +24,14 @@ namespace DioBank.Entities
             if (Balance - amount < (Limit * -1))
             {
                 Console.WriteLine("Saldo insuficiente");
+                Console.WriteLine();
                 return false;
             }
 
             Balance -= amount;
+            Console.WriteLine("Saque realizado");
             Console.WriteLine("Saldo atualizado: {0}", Balance.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine();
 
             return true;
         }
@@ -36,7 +39,9 @@ namespace DioBank.Entities
         public void Deposit(double amount)
         {
             Balance += amount;
+            Console.WriteLine("Depósito realizado");
             Console.WriteLine("Saldo atualizado: {0}", Balance.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine();
         }
 
         public void Transfer(double amount, Account account)
